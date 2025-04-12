@@ -27,8 +27,7 @@ module riscv_singlecycle
     logic [31:0] instr_mem [2047:0]; 
     logic [31:0] data_mem  [2047:0]; 
     logic [31:0] reg_file  [31:0]; 
-    initial begin  // nedense sstu klasöründen aldi MTH_RISC-V dan almadı. - dolayı galiba. eğik çizgi yönü de önemli
-        //$readmemh("/mnt/d/SSTU_lab_project/test.hex", instr_mem, 0, 2047); //Linux için
+    initial begin  
         //$readmemh("D:/SSTU_lab_project/imem.mem", instr_mem, 0, 2047); //Windows için
         $readmemh(IMemInitFile, instr_mem, 0, 2047);
         $readmemh(DMemInitFile, data_mem, 0, 2047);
