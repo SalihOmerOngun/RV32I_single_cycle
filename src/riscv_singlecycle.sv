@@ -9,7 +9,7 @@ module riscv_singlecycle
     input  logic clk_i,
     input  logic rstn_i,
     input  logic  [XLEN-1:0] addr_i, // data_o icin
-    output logic             update_o, // gereksiz
+    output logic             update_o, 
     output logic  [XLEN-1:0] data_o, // testbenchte bakılacak unutma 
     output logic  [XLEN-1:0] pc_o,
     output logic  [XLEN-1:0] instr_o,
