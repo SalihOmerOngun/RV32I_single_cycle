@@ -1,0 +1,1 @@
+new isimli 2 dosya ek komutların test edilmesi için konmuştur

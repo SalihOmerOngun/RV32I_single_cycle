@@ -1,0 +1,1 @@
+Write a SystemVerilog code of a single cycle RISC-V processor. The designed micro-architecture should include all the instructions in RV32I (It is in the riscv-spec). The processor should work as in-order and single-issue. There is no need for FENCE, FENCE.TSO, PAUSE, ECALL, EBREAK instruction implementation. Additional to the RV32I, CTZ, CLZ, and CPOP must be implemented too.
