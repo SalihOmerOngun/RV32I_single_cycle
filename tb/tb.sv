@@ -29,7 +29,9 @@ module tb ();
         integer file_pointer;   
         initial begin
             file_pointer = $fopen("model.log", "w");
-            #4
+            #2;
+            $fdisplay(file_pointer, "0x%8h (0x%8h)", pc, instr);   // 4 ns delay gelince clk vuruyor pc 80000004 oluyor. 80000000 olması icin buraya ekledim         
+            #2;        
             forever begin
                 if (update) begin
                     if (reg_addr == 0) begin
