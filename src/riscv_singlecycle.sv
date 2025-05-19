@@ -28,9 +28,9 @@ module riscv_singlecycle
     logic [31:0] data_mem  [2047:0]; 
     logic [31:0] reg_file  [31:0]; 
     initial begin  
-        $readmemh("D:/SSTU_lab_project/imem.mem", instr_mem, 0, 2047); //Windows için
-        //$readmemh(IMemInitFile, instr_mem, 0, 2047);
-        //$readmemh(DMemInitFile, data_mem, 0, 2047);
+        //$readmemh("D:/SSTU_lab_project/imem.mem", instr_mem, 0, 2047); //Windows için
+        $readmemh(IMemInitFile, instr_mem, 0, 2047);
+        $readmemh(DMemInitFile, data_mem, 0, 2047);
     end     
     logic [31:0] rs1;      // source register 1 data // execute decode wire 
     logic [31:0] rs2;      // source register 2 data // execute decode wire
