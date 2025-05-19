@@ -28,9 +28,9 @@ module riscv_singlecycle
     logic [31:0] data_mem  [2047:0]; 
     logic [31:0] reg_file  [31:0]; 
     initial begin  
-        //$readmemh("D:/SSTU_lab_project/imem.mem", instr_mem, 0, 2047); //Windows için
-        $readmemh(IMemInitFile, instr_mem, 0, 2047);
-        $readmemh(DMemInitFile, data_mem, 0, 2047);
+        $readmemh("D:/SSTU_lab_project/imem.mem", instr_mem, 0, 2047); //Windows için
+        //$readmemh(IMemInitFile, instr_mem, 0, 2047);
+        //$readmemh(DMemInitFile, data_mem, 0, 2047);
     end     
     logic [31:0] rs1;      // source register 1 data // execute decode wire 
     logic [31:0] rs2;      // source register 2 data // execute decode wire
@@ -96,10 +96,10 @@ module riscv_singlecycle
             else if(instr[6:0] == 7'b0000011) begin  // LOAD
                 case(instr[14:12])
                     3'b000  : begin
-                        reg_data = {{24'({data_mem[alu_out[10:0]][7]})}, data_mem[alu_out[10:0]][7:0]};
+                        reg_data = {{24{data_mem[alu_out[10:0]][7]}}, data_mem[alu_out[10:0]][7:0]};
                     end 
                     3'b001  : begin
-                        reg_data = {{16'({data_mem[alu_out[10:0]][7]})}, data_mem[alu_out[10:0]][15:0]};
+                        reg_data = {{16{data_mem[alu_out[10:0]][15]}}, data_mem[alu_out[10:0]][15:0]};
                     end 
                     3'b010  : begin
                         reg_data = data_mem[alu_out[10:0]];
